@@ -1,0 +1,13 @@
+# Ignorar arquivos de configuração do MySQL
+*.sql
+
+# Ignorar arquivos temporários do sistema
+*.log
+*.tmp
+*.swp
+
+# Ignorar arquivos de backup
+*.bak
+
+# Ignorar arquivos do sistema de controle de versão
+*.git/
