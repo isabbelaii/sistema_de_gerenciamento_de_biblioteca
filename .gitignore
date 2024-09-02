@@ -1,0 +1,87 @@
+ O projeto consiste em um sistema básico para gerenciar uma biblioteca, permitindo o controle de autores, livros e empréstimos. O sistema utiliza um banco de dados MySQL para armazenar e gerenciar as informações relevantes.
+
+Objetivo: Desenvolver um banco de dados relacional para uma biblioteca que permita:
+
+Gerenciar Autores:
+
+Armazenar informações sobre autores, incluindo nome e nacionalidade.
+Gerenciar Livros:
+
+Registrar livros com títulos, anos de publicação, gêneros e autores associados.
+Gerenciar Empréstimos:
+
+Controlar empréstimos de livros, registrando data de empréstimo, data de devolução e o nome do usuário que realizou o empréstimo.
+Estrutura do Banco de Dados:
+
+Tabela Autores:
+
+AutorID: Identificador único do autor.
+Nome: Nome do autor.
+Nacionalidade: Nacionalidade do autor.
+Tabela Livros:
+
+LivroID: Identificador único do livro.
+Titulo: Título do livro.
+AutorID: Referência ao autor do livro (chave estrangeira).
+AnoPublicacao: Ano de publicação do livro.
+Genero: Gênero do livro.
+Tabela Emprestimos:
+
+EmprestimoID: Identificador único do empréstimo.
+LivroID: Referência ao livro emprestado (chave estrangeira).
+DataEmprestimo: Data em que o livro foi emprestado.
+DataDevolucao: Data em que o livro foi devolvido (pode ser NULL se ainda não devolvido).
+NomeUsuario: Nome do usuário que emprestou o livro.
+# Sistema de Biblioteca
+
+Este projeto consiste em um sistema de gerenciamento de biblioteca utilizando um banco de dados MySQL. O sistema permite o gerenciamento de autores, livros e empréstimos.
+
+## Estrutura do Projeto
+
+O projeto é composto por um banco de dados MySQL com três tabelas principais:
+
+1. **Autores**
+   - `AutorID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `Nome` (VARCHAR(100), NOT NULL)
+   - `Nacionalidade` (VARCHAR(100), NOT NULL)
+
+2. **Livros**
+   - `LivroID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `Titulo` (VARCHAR(255), NOT NULL)
+   - `AutorID` (INT, FOREIGN KEY referenciando `Autores(AutorID)`)
+   - `AnoPublicacao` (YEAR)
+   - `Genero` (VARCHAR(100))
+
+3. **Emprestimos**
+   - `EmprestimoID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `LivroID` (INT, FOREIGN KEY referenciando `Livros(LivroID)`)
+   - `DataEmprestimo` (DATE, NOT NULL)
+   - `DataDevolucao` (DATE)
+   - `NomeUsuario` (VARCHAR(100), NOT NULL)
+
+## Setup
+
+1. **Criação do Banco de Dados:**
+   - Execute o script SQL fornecido para criar o banco de dados `Biblioteca_DS1` e as tabelas correspondentes.
+
+2. **Inserção de Dados:**
+   - Após criar as tabelas, você pode inserir dados nas tabelas de `Autores`, `Livros` e `Emprestimos` utilizando os comandos `INSERT` fornecidos.
+
+3. **Consultas e Atualizações:**
+   - O script também inclui consultas para listar livros e empréstimos, bem como comandos para atualizar e excluir dados.
+
+## Como Contribuir
+
+1. Faça um fork deste repositório.
+2. Crie uma branch para suas alterações (`git checkout -b feature/nova-funcionalidade`).
+3. Faça suas alterações e commit (`git commit -am 'Adiciona nova funcionalidade'`).
+4. Envie suas alterações para o repositório remoto (`git push origin feature/nova-funcionalidade`).
+5. Crie um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+## Contato
+
+Se tiver dúvidas, entre em contato com [Seu Nome] em [seuemail@exemplo.com].
